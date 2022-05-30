@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0e1538;
+  place-items: center;
+}
+
+.container{
+  position: relative;
+  width: 80vmin;
+  padding: 100px 40px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.container:before{
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 160%;
+  background: linear-gradient(#00ccff, #d400d4);
+  animation: animate 4s linear infinite;
+}
+
+.container:after{
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: #0e1538;
+  border-radius: 16px;
+}
+
+@keyframes animate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.container .content{
+  background: transparent;
+  position: relative;
+  display: grid;
+  z-index: 10;
+}
+
+.container .content .counter{
+  color: #fff;
+  font-size: 80px;
+  text-align: center;
+}
+
+.container .content .buttons{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80px;
+}
+
+.container .content .buttons button{
+  width: 130px;
+  padding: 15px 0;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.container .content .buttons button.minus{
+  margin-right: 10px;
+}
+
+.container .content .buttons button.plus{
+  margin-left: 10px;
+}
