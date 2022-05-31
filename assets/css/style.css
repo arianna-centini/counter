@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
-
 *{
   margin: 0;
   padding: 0;
@@ -18,9 +17,9 @@ body{
 
 .container{
   position: relative;
-  width: 80vmin;
+  width: 50%;
   padding: 100px 40px;
-  height: 400px;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +32,7 @@ body{
   content: '';
   position: absolute;
   width: 150px;
-  height: 160%;
+  height: 180%;
   background: linear-gradient(#00ccff, #d400d4);
   animation: animate 4s linear infinite;
 }
@@ -88,9 +87,38 @@ body{
 }
 
 .container .content .buttons button.minus{
-  margin-right: 10px;
+  margin-right: 50px;
 }
 
 .container .content .buttons button.plus{
-  margin-left: 10px;
+  margin-left: 50px;
+}
+
+@media only screen and (max-width: 600px){
+  .container .content .buttons{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .content .buttons button.minus{
+  margin-left: 15px;
+    margin-bottom: 20px;
+  }
+
+.container .content .buttons button.plus{
+  margin-right: 15px;
+  margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 992px){
+  .container .content .buttons button{
+    width: 110px;
+  }
+  .container .content .buttons button.minus{
+  margin-right: 15px;
+  }
+  .container .content .buttons button.plus{
+    margin-left: 15px;
+  }
 }
